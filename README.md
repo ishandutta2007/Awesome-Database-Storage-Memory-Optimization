@@ -68,9 +68,9 @@ Below is a curated comparison of leading enterprise managed caching and in-memor
 
 ## 💻 Open-Source GitHub Projects
 
-Curated list of production-grade open-source caching layers, in-memory databases, and high-performance embedded storage engines. **Sorted by GitHub Stars (descending)**:
+Curated list of production-grade open-source caching layers, in-memory databases, and high-performance embedded storage engines. **Sorted by GitHub_Stars (descending)**:
 
-| # | Project & Star Badge | Category & Architecture | Key Strengths & Use Cases | License |
+| # | Project & Stars_Badge | Category & Architecture | Key Strengths & Use Cases | License |
 | :-: | :--- | :--- | :--- | :--- |
 | 1 | **[Redis](https://github.com/redis/redis)** <br> [![Redis Stars](https://img.shields.io/github/stars/redis/redis?style=social&color=white)](https://github.com/redis/redis/stargazers) | In-Memory Data Store & Cache | The foundational in-memory key-value store. Supports strings, hashes, lists, sets, sorted sets, streams, Pub/Sub, Lua scripts, and transactions. Highly adopted across global engineering organizations. | RSALv2 / SSPL |
 | 2 | **[RocksDB](https://github.com/facebook/rocksdb)** <br> [![RocksDB Stars](https://img.shields.io/github/stars/facebook/rocksdb?style=social&color=white)](https://github.com/facebook/rocksdb/stargazers) | Embedded LSM-Tree Key-Value Engine | High-performance embedded key-value database engine optimized for fast storage (SSDs, NVMe). Powers modern distributed databases like CockroachDB, TiKV, Kafka Streams, and Apache Flink. | Apache-2.0 / GPL-2.0 |
