@@ -15,30 +15,32 @@ This repository tracks notable **SaaS platforms** and **open-source projects** f
 Contributions welcome! Open an PR to add/update entries. Keep descriptions factual and link to official sites.
 
 ## Table of Contents
-- [SaaS/Hosted Platforms](#saas-products)
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
+- [SaaS/Hosted Platforms](#saashosted-platforms)
 - [Open-Source GitHub Projects](#open-source-github-projects)
 - [How to Contribute](#how-to-contribute)
 - [Disclaimer](#disclaimer)
 
+## Sector Overview & Market Dynamics
+
+The global in-memory database and caching market is valued at approximately **$10.4B – $13.2B** and is projected to expand to **$30B – $45B+** over the next decade (growing at a 13.7% – 19.4% CAGR), driven by sub-millisecond retrieval demands and real-time AI workloads. The sector exhibits a **hybrid market concentration**: the foundational tier is highly concentrated among mega-cap cloud providers (Microsoft, Alphabet, Amazon), while the specialized caching engines, serverless layers, and distributed In-Memory Data Grid (IMDG) spaces remain moderately fragmented and intensely contested by focused innovators.
+
 ## SaaS/Hosted Platforms
 
-- **[Amazon ElastiCache](https://aws.amazon.com/elasticache/)**  
-  **AWS-managed caching with Valkey and Redis OSS options.** **Serverless Valkey: $0.084/GB-hour** in us-east-1, with a **100 MB minimum** (~$6.13/month for an empty cache) . **Redis OSS has a 1 GB minimum** (~$91.25/month for an empty cache) . **Node-based `cache.t4g.micro` running Valkey: ~$9.34/month** but bills 24/7 regardless of utilization . **Serverless is not in the AWS free tier** . Best for AWS-native workloads wanting managed Valkey with automatic scaling.
+| Product | Company Size (Valuation / Revenue) | Starting Pricing (Specific Tier) | Free Tier / Trial Limits | Key Features & Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Microsoft Azure Cache for Redis](https://azure.microsoft.com/en-us/products/cache/)** | ~$3.1T Market Cap / ~$245B Annual Revenue (Microsoft) | **$16.06/month** (Basic C0, 250 MB cache, single node, ~$0.022/hr) | **30-day trial ($200 credits)**; no permanent free tier. Basic C0 is hourly pay-as-you-go (~$0.022/hr) | Azure-native managed Redis. Transitioning toward Azure Managed Redis. |
+| **[Amazon ElastiCache](https://aws.amazon.com/elasticache/)** | ~$2.2T Market Cap / ~$105B AWS Run-Rate (Amazon) | **$6.13/month** (Serverless Valkey, $0.084/GB-hr with 100 MB min in us-east-1) or **~$9.34/month** (`cache.t4g.micro` node) | **12-month free trial: 750 hrs/month** of `cache.t2.micro` or `cache.t3.micro` (Serverless excluded, 0 free hrs) | AWS-managed caching supporting Valkey and Redis OSS. Automatic scaling available on Serverless. |
+| **[Google Cloud Memorystore](https://cloud.google.com/memorystore)** | ~$2.1T Market Cap / ~$330B Annual Revenue (Alphabet) | **$35.77/month** (Basic M1 tier, 1 GiB memory, ~$0.049/hr) | **90-day trial ($300 credits)** across GCP; no permanent free tier for Memorystore | GCP-managed Redis and Valkey instances with direct VPC peering. |
+| **[Redis Cloud](https://redis.io/cloud/)** | ~$2.0B Valuation (Series G) / >$300M ARR (Redis Ltd.) | **$5.00/month** (Redis Flex, RAM + SSD tier) or **$18.00/month** (Redis Essentials 1 GB, 100% RAM) | **Permanent free tier: 30 MB storage**, 1 database, 30 concurrent connections, no credit card required | Managed Redis supporting official modules (RediSearch, RedisJSON) and Active-Active geo-distribution. |
+| **[Dragonfly Cloud](https://www.dragonflydb.io/cloud)** | ~$50M – $100M Est. Valuation / ~$3.6M ARR ($21M Total Raised) | **$8.00/GB/month** (AWS us-east-1, billed hourly at ~$0.011/GB-hr; BYOC Enterprise starts at $2,000/mo) | **$100 free cloud credits** trial upon sign-up (no permanent free tier) | Multi-threaded Redis-compatible engine delivering high throughput per single instance. |
+| **[Momento Cache](https://www.gomomento.com/)** | ~$60M Est. Valuation / Early-Stage Venture ($30M Total Raised) | **$0.50/GB** overage or **$13.00/GB-month** (Flex capacity with 200 GB transfer included) | **Permanent free tier: 5 GB/month** data transfer (inbound + outbound) & 5M pub/sub ops/mo; no credit card required | Truly serverless cache requiring zero node sizing, cluster provisioning, or pre-allocated capacity. |
 
-- **[Redis Cloud](https://redis.io/cloud/)**  
-  **The commercial Redis service with flexible tiers.** **Essentials 1 GB: $18.00/month** (all-RAM); **Flex starts at $5/month** but keeps hot keys in RAM and the rest on SSD (higher latency for cold reads) . **Essentials tops out at 12 GB**; **Pro 10 GB + HA: ~$454/month** . **30 MB free tier** available . Best for teams needing Redis modules (RediSearch) or Active-Active cross-region writes.
-
-- **[Google Cloud Memorystore](https://cloud.google.com/memorystore)**  
-  **GCP-managed Redis/Valkey.** **Basic M1 1 GiB: $35.77/month**—the most expensive per-GB at small sizes because the smallest instance falls in the M1 band . **Standard 10 GiB: $394.20/month** . **No free tier** . Best for GCP-co-located stacks where egress avoidance and committed-use discounts offset higher per-GB costs.
-
-- **[Azure Cache for Redis](https://azure.microsoft.com/en-us/products/cache/)**  
-  **Azure-managed Redis.** **Basic C0: $16.06/month** . **No free tier** . Best for Azure-native applications with existing commitments and compliance requirements.
-
-- **[Dragonfly Cloud](https://www.dragonflydb.io/cloud)**  
-  **Managed Dragonfly with Redis API compatibility.** **$8/GB/month** in AWS us-east-1, billed hourly, no commitment . **Business tier starts at $2,000/month** with bring-your-own-cloud . **100 cloud credits free trial** (not a lasting free tier) . **License is Business Source, not open source**—limits offering Dragonfly as a service . Best for high single-node throughput where license governance is acceptable.
-
-- **[Momento Cache](https://www.gomomento.com/)**  
-  **Serverless Valkey with Flex and Cluster capacity models.** **Flex starts at $13/GB-month** in us-east-1, includes **200 GB ingress/egress** then $0.05/GB . **No free plan listed** for Flex; **Cluster adds a 25% surcharge** per instance . Best for serverless workloads wanting managed Valkey without node sizing.
+### Platform Cost & Operational Caveats
+- **Hidden Minimums in Managed Caching:** Empty ElastiCache Serverless Valkey costs ~$6.13/mo (100 MB minimum), whereas ElastiCache Redis OSS enforces a 1 GB minimum (~$91.25/mo).
+- **RAM vs. Hybrid Latency:** Redis Cloud Flex ($5/mo) keeps hot keys in RAM and pushes cold keys to SSD, introducing latency spikes on cold reads compared to full in-memory Essentials ($18/mo).
+- **Provisioned Minimum Bands:** Google Cloud Memorystore's smallest instance starts at M1 (1 GiB) at $35.77/mo, running 24/7 with no scale-to-zero capability.
+- **Licensing Restrictions:** Dragonfly Cloud is powered by a Business Source License (BSL) core, which restricts offering it as a managed competing service, unlike Valkey's open BSD license.
 
 ## Open-Source GitHub Projects
 
