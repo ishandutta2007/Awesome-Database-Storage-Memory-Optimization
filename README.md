@@ -1,6 +1,6 @@
 # Awesome-Database-Storage-Memory-Optimization
 
-# Top Database Storage & Memory Optimization Ecosystem
+## Top Database Storage & Memory Optimization Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on In-Memory Data Stores, Caching Layers & Self-Hosted Optimization Engines*  
